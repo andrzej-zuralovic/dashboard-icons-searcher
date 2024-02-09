@@ -1,4 +1,4 @@
-# Dashboard Icons Searcher
+# [Dashboard Icons Searcher](https://andrzej-zuralovic.github.io/dashboard-icons-searcher/)
 
 This application, Dashboard Icons Searcher, is a tool designed to help you easily search for icons from the [Dashboard Icons](https://github.com/walkxcode/dashboard-icons) repository. The links for the icons are provided from the jsDelivr CDN.
 
