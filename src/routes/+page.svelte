@@ -3,7 +3,7 @@
 	import { debounce } from '$lib/utils';
 	import { onMount } from 'svelte';
 	import { Grid } from 'svelte-virtual';
-	import { SvelteToast } from '@zerodevx/svelte-toast'
+	import { SvelteToast } from '@zerodevx/svelte-toast';
 
 	import ImageCard from '$lib/components/ImageCard.svelte';
 	import SearchBar from '$lib/components/SearchBar.svelte';
@@ -88,4 +88,4 @@
 	</Grid>
 {/if}
 
-<SvelteToast options={ { dismissable: false} } />
+<SvelteToast options={{ dismissable: false }} />

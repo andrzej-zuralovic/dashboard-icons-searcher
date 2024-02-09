@@ -1,6 +1,6 @@
 <script>
 	import { copyToClipboard } from '$lib/utils';
-	import { toast } from '@zerodevx/svelte-toast'
+	import { toast } from '@zerodevx/svelte-toast';
 
 	export let image = {};
 

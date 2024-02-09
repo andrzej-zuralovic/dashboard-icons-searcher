@@ -5,7 +5,7 @@
 	const handleKeyDown = (event) => {
 		switch (event.key) {
 			case '/':
-				if(event.target !== searchInput) event.preventDefault();
+				if (event.target !== searchInput) event.preventDefault();
 				searchInput.focus();
 				break;
 		}
