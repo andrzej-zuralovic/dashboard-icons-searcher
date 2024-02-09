@@ -1,38 +1,26 @@
-# create-svelte
+# Dashboard Icons Searcher
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This application, Dashboard Icons Searcher, is a tool designed to help you easily search for icons from the [Dashboard Icons](https://github.com/walkxcode/dashboard-icons) repository. The links for the icons are provided from the jsDelivr CDN.
 
-## Creating a project
+## Technologies Used
 
-If you're seeing this, you've probably already done this step. Congrats!
+This application is built using [Svelte](https://svelte.dev/), a modern JavaScript compiler that allows you to write easy-to-understand JavaScript code which is then compiled to highly efficient code that runs in the browser.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+In addition, the application utilizes [Tailwind CSS](https://tailwindcss.com/), a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs, and [Fleabite](https://flowbite.com/), a comprehensive UI toolkit built on top of Tailwind CSS, for crafting the user interface.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Installation and Usage
 
-## Developing
+To install and run this application, follow these steps:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1. Clone the repository
+2. Navigate into the directory: `cd dashboard-icons-searcher`
+3. Install the dependencies: `npm install`
+4. Start the application: `npm run dev -- --open`
 
-```bash
-npm run dev
+## Contributing
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Building
+## License
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+This project is licensed under the MIT License.
