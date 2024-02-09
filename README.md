@@ -6,7 +6,7 @@ This application, Dashboard Icons Searcher, is a tool designed to help you easil
 
 This application is built using [Svelte](https://svelte.dev/), a modern JavaScript compiler that allows you to write easy-to-understand JavaScript code which is then compiled to highly efficient code that runs in the browser.
 
-In addition, the application utilizes [Tailwind CSS](https://tailwindcss.com/), a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs, and [Fleabite](https://flowbite.com/), a comprehensive UI toolkit built on top of Tailwind CSS, for crafting the user interface.
+In addition, the application utilizes [Tailwind CSS](https://tailwindcss.com/), a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs, and [Flowbite](https://flowbite.com/), a comprehensive UI toolkit built on top of Tailwind CSS, for crafting the user interface.
 
 ## Installation and Usage
 
