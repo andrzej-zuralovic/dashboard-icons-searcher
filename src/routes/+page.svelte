@@ -9,11 +9,7 @@
 	import SearchBar from '$lib/components/SearchBar.svelte';
 	import HeaderBar from '$lib/components/HeaderBar.svelte';
 	import Spinner from '$lib/components/Spinner.svelte';
-
-	const BRANCH = 'main';
-	const REPO = 'walkxcode/dashboard-icons';
-	const REPO_TREE_URL = `https://api.github.com/repos/${REPO}/git/trees`;
-	const CDN_URL = `https://cdn.jsdelivr.net/gh/${REPO}`;
+	import { FORMATS, BRANCH, REPO_TREE_URL, CDN_URL } from '$lib/constants';
 
 	let loading = true;
 	let availableImages = [];
@@ -37,8 +33,7 @@
 				} else {
 					availableImages.push({
 						title: title,
-						png: format === 'png' ? url : null,
-						svg: format === 'svg' ? url : null
+						...FORMATS.reduce((acc, fmt) => ({ ...acc, [fmt]: fmt === format ? url : null }), {})
 					});
 				}
 			}
@@ -47,14 +42,13 @@
 
 	onMount(async () => {
 		const { tree } = await fetchTree(`${REPO_TREE_URL}/${BRANCH}`);
-		const pngTreeURL = tree.find((file) => file.path === 'png').url;
-		const svgTreeUrl = tree.find((file) => file.path === 'svg').url;
-
-		const pngTree = await fetchTree(pngTreeURL);
-		processTree(pngTree.tree, 'png');
-
-		const svgTree = await fetchTree(svgTreeUrl);
-		processTree(svgTree.tree, 'svg');
+		await Promise.all(
+			FORMATS.map(async (format) => {
+				const formatTreeUrl = tree.find((file) => file.path === format).url;
+				const formatTree = await fetchTree(formatTreeUrl);
+				processTree(formatTree.tree, format);
+			})
+		);
 
 		filteredImages = availableImages;
 		loading = false;

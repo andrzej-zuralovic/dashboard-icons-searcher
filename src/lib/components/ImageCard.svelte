@@ -1,6 +1,7 @@
 <script>
 	import { copyToClipboard } from '$lib/utils';
 	import { toast } from '@zerodevx/svelte-toast';
+	import { FORMATS } from '$lib/constants';
 
 	export let image = {};
 
@@ -21,22 +22,18 @@
 	>
 		<div class="mb-2 text-xs">{image.title}</div>
 		<div class="mt-2 flex justify-around w-full text-xs">
-			<button
-				class="disabled:text-gray-400"
-				disabled={!image.png}
-				on:click={copyLink(image.png, 'PNG')}
-				title={!image.png ? 'PNG not available' : 'Copy PNG link to clipboard'}
-			>
-				PNG
-			</button>
-			<button
-				class="disabled:text-gray-400"
-				disabled={!image.svg}
-				on:click={copyLink(image.svg, 'SVG')}
-				title={!image.svg ? 'SVG not available' : 'Copy SVG link to clipboard'}
-			>
-				SVG
-			</button>
+			{#each FORMATS as format}
+				<button
+					class="disabled:text-gray-400"
+					disabled={!image[format]}
+					on:click={() => copyLink(image[format], format.toUpperCase())}
+					title={!image[format]
+						? `${format.toUpperCase()} not available`
+						: `Copy ${format.toUpperCase()} link to clipboard`}
+				>
+					{format.toUpperCase()}
+				</button>
+			{/each}
 		</div>
 	</div>
 </div>
